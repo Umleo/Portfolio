@@ -69,7 +69,6 @@ export default function Dropdown({
         className="flex items-center gap-2 cursor-pointer select-none"
       >
         <h1 className="text-2xl font-bold">{title}</h1>
-        {/* Passamos para a setinha o conhecimento local: ela só vira se ESSE componente foi clicado */}
         {!noArrow && <DownArrowIcon isOpen={isOpen} />}
       </div>
 
@@ -79,8 +78,9 @@ export default function Dropdown({
         Note o "{isOpen && ( ...div... )}": a tradução é algo como "Se isOpen for verdadeiro, mostre o seguinte HTML".
       */}
       {isOpen && (
+        //right-0 para forcar box a renderizaar para a esquerda, caso a prop "left" seja verdadeira
         <div
-          className={`${left && 'right-0'} t-2 w-auto min-h-25 bg-gray-100 border border-black rounded-md shadow-lg p-4 text-left absolute whitespace-nowrap animate-my`}
+          className={`${left && 'right-0'} mt-1 w-auto min-h-auto bg-gray-100 border border-black rounded-md shadow-lg p-4 text-left absolute whitespace-nowrap animate-my`}
         >
           {/* O dangerouslySetInnerHTML converte a nossa string de conteúdo em HTML de verdade para ler tags como o "<br />" que usamos la no topo */}
           <div className="flex flex-col gap-2 text-black">

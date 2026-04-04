@@ -37,15 +37,15 @@ export default function Titulo({ site, title }: SiteProps) {
             'Olá!',
             1000,
             'Welcome!',
-            100,
-            'ops...',
-            100,
+            500,
+            'bienvenido!',
+            500,
             'Bem-Vindo!',
             1500,
             (el) => el!.classList.remove('type'), // A reference to the element gets passed as the first argument of a callback function
           ]}
           wrapper="span"
-          speed={40}
+          speed={60}
           repeat={0}
           style={{ display: 'inline-block' }}
         />

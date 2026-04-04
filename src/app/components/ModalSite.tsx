@@ -1,155 +1,116 @@
 'use client';
 
 import Titulo from './Titulo';
+import { useSiteTitle } from '../store/siteModal';
 
-export default function ModalSite() {
+type ModalSiteProps = {
+  desenvolvimento?: boolean;
+};
+
+export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
+  const { title } = useSiteTitle();
+
   return (
     <>
-      <section className="flex h-full w-full text-white p-8">
-        <div className="flex-1 flex flex-col gap-4">
-          <div id="titulo" className="flex justify-center">
-            <Titulo site={true} title="Projeto Bendita" />
+      {title === 'Bendita' && (
+        <section className="flex h-full w-full text-white p-8">
+          <div className="flex-1 flex flex-col gap-4">
+            <div id="titulo" className="flex justify-center">
+              <Titulo site={true} title="Projeto Bendita" />
+            </div>
+            {/* minimal-scrollbar - definições no arquivo css */}
+            <div className="flex flex-col items-center minimal-scrollbar overflow-auto">
+              <p className="text-2xl p-6 rounded-2xl cursor-text bg-neutral-900 max-w-190">
+                <b>📌 Sobre o projeto:</b>
+                <br /> Este projeto tem como objetivo simular o funcionamento de
+                uma loja de pedidos, utilizando como exemplo um restaurante
+                fictício chamado Bendita. Com foco em dispositivos mobile, na
+                aplicação, o usuário pode navegar pela página inicial,
+                visualizar os produtos disponíveis e, ao selecionar um item,
+                personalizá-lo conforme as opções definidas (como adicionais ou
+                variações). Além da experiência do cliente, o sistema conta com
+                uma área administrativa onde é possível gerenciar os pedidos
+                realizados, incluindo atualização de status (como preparo, envio
+                e entrega), controle de funcionamento da loja (aberto/fechado) e
+                disponibilidade e gerenciamento dos produtos.
+                <br />
+              </p>
+              <hr className="border-white/60 border-2 w-4/5 my-4" />
+              <p className="text-2xl p-6 rounded-2xl cursor-text bg-neutral-900 max-w-190 min-w-190">
+                <b>🛠 Tecnologias utilizadas:</b>
+                <br />* Next.js (frontend e backend)
+                <br />* Tailwind CSS
+                <br />* PostgreSQL
+                <br />* Prisma ORM
+                <br />* Better Auth (autenticação)
+              </p>
+              <hr className="border-white/60 border-2 w-4/5 my-4" />
+              <p className="text-2xl p-6 rounded-2xl cursor-text bg-neutral-900 max-w-190 min-w-190">
+                <b>☁️ Infraestrutura:</b>
+                <br />* Infraestrutura Deploy: Vercel
+                <br />* Banco de dados: NeonDB
+              </p>
+              <hr className="border-white/60 border-2 w-4/5 my-4" />
+              <p className="text-2xl p-6 rounded-2xl cursor-text bg-neutral-900 max-w-190">
+                <b>🚧 Status do projeto:</b>
+                <br />
+                * Interface da página inicial <br />
+                * Lógica de criação de pedidos
+                <br /> * Sistema de autenticação <br />
+                * Registro de endereços <br />O projeto segue em
+                desenvolvimento, com foco na evolução do painel administrativo e
+                melhorias na experiência do usuário.
+              </p>
+              <hr className="border-white/60 border-2 w-4/5 my-4" />
+              <p className="text-2xl p-6 rounded-2xl cursor-text bg-neutral-900 max-w-190">
+                <b>📚 Aprendizados:</b>
+                <br />
+                Este é meu primeiro projeto fullstack, desenvolvido com o
+                objetivo de consolidar e integrar conhecimentos em
+                desenvolvimento web. Durante sua construção, venho trabalhando
+                na implementação de boas práticas, organização de código e
+                integração entre frontend, backend e banco de dados.
+              </p>
+              <a
+                href="https://github.com/Umleo/Bendita"
+                target="_blank"
+                className="text-blue-600 mt-3 underline"
+              >
+                {/* Este link cobre o iframe para capturar o clique e te levar ao site */}
+                link para o repositório Github
+              </a>
+            </div>
           </div>
-          {/* minimal-scrollbar - definições no arquivo css */}
-          <p className="minimal-scrollbar text-2xl m-4 p-6 rounded-2xl cursor-text overflow-auto bg-neutral-900">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a
-            dictum libero. Duis bibendum scelerisque tortor, quis cursus arcu
-            euismod eu. Integer eget orci vitae leo tempus rhoncus nec eget
-            odio. In posuere, lacus eu dignissim laoreet, augue sapien egestas
-            ligula, sed pharetra lorem neque ac erat. Morbi felis tellus,
-            pretium id consequat mollis, sagittis sit amet felis. Donec
-            malesuada neque in arcu auctor aliquam. Sed at imperdiet nunc.
-            Nullam facilisis, orci id convallis laoreet, purus libero tempor
-            lacus, auctor mattis sapien dolor sit amet sem. Sed tincidunt velit
-            et laoreet mattis. Donec nec posuere neque. Donec imperdiet dapibus
-            aliquam. Quisque lobortis iaculis turpis, ut ultrices metus pharetra
-            nec. Nunc pharetra nibh ipsum, ut ultricies sapien porta et. Etiam
-            vel dictum nisi, eget condimentum velit. Vestibulum porta urna in
-            risus vestibulum, sit amet elementum felis pellentesque. Nunc
-            dignissim, orci a convallis dignissim, dolor sapien consectetur
-            neque, quis malesuada dui felis porttitor sapien. Cras odio lorem,
-            iaculis eget congue vel, malesuada in sem. Etiam a condimentum mi.
-            Integer et dui diam. Integer elementum mauris enim, ac efficitur
-            tortor cursus quis. Suspendisse sodales tempus neque eu eleifend.
-            Pellentesque a tempus dui, fermentum efficitur nunc. Vivamus nisl
-            tellus, tempor feugiat neque sit amet, dignissim condimentum eros.
-            Quisque aliquet at sem quis dapibus. Nulla pulvinar lacus nec nulla
-            pulvinar malesuada. Proin sit amet risus metus. Aenean purus odio,
-            fermentum ac porta non, facilisis sit amet lorem. Sed nec pretium
-            tortor. Duis vel dui at lectus sollicitudin volutpat. Suspendisse
-            bibendum ac nulla ut tempor. Nulla id scelerisque erat. Nulla
-            elementum porttitor tristique. Etiam molestie, ante et suscipit
-            ornare, nunc purus ultricies nunc, efficitur scelerisque lectus erat
-            ultrices tellus. Proin iaculis lorem nec facilisis commodo. Integer
-            leo dui, rutrum eu consectetur ut, venenatis in libero. Sed finibus,
-            tellus eget lacinia cursus, mauris velit consequat purus, in
-            pharetra neque neque a ante. Etiam non sem et tortor fermentum
-            placerat. In sapien ipsum, venenatis in erat ut, tincidunt porttitor
-            ante. Sed velit magna, eleifend luctus justo et, gravida porta erat.
-            Donec hendrerit, urna et facilisis efficitur, turpis orci accumsan
-            ligula, ac mattis nisl lorem in est. Aliquam quis ultrices velit.
-            Morbi id eros nec lacus semper varius eu sed ante. Sed dolor nisi,
-            bibendum sed neque sed, porttitor dictum mauris. Cras eget massa
-            nulla. Sed ultricies nibh sit amet porta interdum. Maecenas aliquet
-            efficitur quam, vel tincidunt libero. Morbi bibendum placerat
-            lectus, sed egestas felis eleifend ac. Sed eu nibh non lorem
-            hendrerit euismod eget id ante. Morbi dapibus nunc quis neque
-            sollicitudin, nec molestie risus ornare. Quisque venenatis aliquam
-            enim, eget dapibus purus blandit vel. Morbi feugiat aliquet lacus,
-            vitae congue ipsum lobortis eu. Aenean gravida dapibus orci
-            convallis lobortis. Pellentesque venenatis ante in feugiat tempus.
-            Nam tincidunt vel dui id tempor. Sed dapibus ipsum ac tempor
-            tincidunt. Nullam eu ipsum ac risus lacinia pretium vitae eu massa.
-            Donec interdum ex at consectetur gravida. Cras ornare vehicula eros
-            consectetur porta. Pellentesque ullamcorper scelerisque feugiat. Nam
-            porttitor ullamcorper ante in gravida. Sed justo massa, imperdiet
-            nec nulla vitae, varius luctus elit. Vestibulum malesuada diam ut
-            elementum pellentesque. Proin tristique orci tortor, non suscipit
-            tortor fringilla sed. Donec tincidunt dapibus convallis. Integer
-            egestas venenatis finibus. Maecenas sit amet pharetra nisl. Aliquam
-            mauris mauris, suscipit id vulputate at, tristique eget augue. Ut
-            pharetra felis nec orci ornare, vitae pharetra lectus ultrices.
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a
-            dictum libero. Duis bibendum scelerisque tortor, quis cursus arcu
-            euismod eu. Integer eget orci vitae leo tempus rhoncus nec eget
-            odio. In posuere, lacus eu dignissim laoreet, augue sapien egestas
-            ligula, sed pharetra lorem neque ac erat. Morbi felis tellus,
-            pretium id consequat mollis, sagittis sit amet felis. Donec
-            malesuada neque in arcu auctor aliquam. Sed at imperdiet nunc.
-            Nullam facilisis, orci id convallis laoreet, purus libero tempor
-            lacus, auctor mattis sapien dolor sit amet sem. Sed tincidunt velit
-            et laoreet mattis. Donec nec posuere neque. Donec imperdiet dapibus
-            aliquam. Quisque lobortis iaculis turpis, ut ultrices metus pharetra
-            nec. Nunc pharetra nibh ipsum, ut ultricies sapien porta et. Etiam
-            vel dictum nisi, eget condimentum velit. Vestibulum porta urna in
-            risus vestibulum, sit amet elementum felis pellentesque. Nunc
-            dignissim, orci a convallis dignissim, dolor sapien consectetur
-            neque, quis malesuada dui felis porttitor sapien. Cras odio lorem,
-            iaculis eget congue vel, malesuada in sem. Etiam a condimentum mi.
-            Integer et dui diam. Integer elementum mauris enim, ac efficitur
-            tortor cursus quis. Suspendisse sodales tempus neque eu eleifend.
-            Pellentesque a tempus dui, fermentum efficitur nunc. Vivamus nisl
-            tellus, tempor feugiat neque sit amet, dignissim condimentum eros.
-            Quisque aliquet at sem quis dapibus. Nulla pulvinar lacus nec nulla
-            pulvinar malesuada. Proin sit amet risus metus. Aenean purus odio,
-            fermentum ac porta non, facilisis sit amet lorem. Sed nec pretium
-            tortor. Duis vel dui at lectus sollicitudin volutpat. Suspendisse
-            bibendum ac nulla ut tempor. Nulla id scelerisque erat. Nulla
-            elementum porttitor tristique. Etiam molestie, ante et suscipit
-            ornare, nunc purus ultricies nunc, efficitur scelerisque lectus erat
-            ultrices tellus. Proin iaculis lorem nec facilisis commodo. Integer
-            leo dui, rutrum eu consectetur ut, venenatis in libero. Sed finibus,
-            tellus eget lacinia cursus, mauris velit consequat purus, in
-            pharetra neque neque a ante. Etiam non sem et tortor fermentum
-            placerat. In sapien ipsum, venenatis in erat ut, tincidunt porttitor
-            ante. Sed velit magna, eleifend luctus justo et, gravida porta erat.
-            Donec hendrerit, urna et facilisis efficitur, turpis orci accumsan
-            ligula, ac mattis nisl lorem in est. Aliquam quis ultrices velit.
-            Morbi id eros nec lacus semper varius eu sed ante. Sed dolor nisi,
-            bibendum sed neque sed, porttitor dictum mauris. Cras eget massa
-            nulla. Sed ultricies nibh sit amet porta interdum. Maecenas aliquet
-            efficitur quam, vel tincidunt libero. Morbi bibendum placerat
-            lectus, sed egestas felis eleifend ac. Sed eu nibh non lorem
-            hendrerit euismod eget id ante. Morbi dapibus nunc quis neque
-            sollicitudin, nec molestie risus ornare. Quisque venenatis aliquam
-            enim, eget dapibus purus blandit vel. Morbi feugiat aliquet lacus,
-            vitae congue ipsum lobortis eu. Aenean gravida dapibus orci
-            convallis lobortis. Pellentesque venenatis ante in feugiat tempus.
-            Nam tincidunt vel dui id tempor. Sed dapibus ipsum ac tempor
-            tincidunt. Nullam eu ipsum ac risus lacinia pretium vitae eu massa.
-            Donec interdum ex at consectetur gravida. Cras ornare vehicula eros
-            consectetur porta. Pellentesque ullamcorper scelerisque feugiat. Nam
-            porttitor ullamcorper ante in gravida. Sed justo massa, imperdiet
-            nec nulla vitae, varius luctus elit. Vestibulum malesuada diam ut
-            elementum pellentesque. Proin tristique orci tortor, non suscipit
-            tortor fringilla sed. Donec tincidunt dapibus convallis. Integer
-            egestas venenatis finibus. Maecenas sit amet pharetra nisl. Aliquam
-            mauris mauris, suscipit id vulputate at, tristique eget augue. Ut
-            pharetra felis nec orci ornare, vitae pharetra lectus ultrices.
-          </p>
-        </div>
 
-        <div className="flex-1 flex justify-center items-center">
-          <div className="w-100 h-150 relative overflow-hidden rounded-2xl bg-gray-800">
-            <iframe
-              src="https://bendita.vercel.app/"
-              className="w-full h-full rounded-2xl cursor-pointer"
-              title="Projeto Bendita"
-              loading="lazy"
-              scrolling="no" //erro estranho - funcionando
-            />
-            {/* Overlay para permitir o clique de redirecionamento */}
+          <div className="flex-1 flex flex-col gap-4 justify-center items-center">
+            {desenvolvimento && (
+              <div
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold backdrop-blur-md 'border-amber-300/60 bg-amber-400/15 text-amber-200 shadow-[0_0_24px_rgba(251,191,36,0.22)]'`}
+              >
+                <span>🚧 Em desenvolvimento</span>
+              </div>
+            )}
+            <div className="w-120 h-170 relative overflow-hidden rounded-2xl bg-gray-800">
+              <iframe
+                src="https://bendita.vercel.app/"
+                className="w-full h-full rounded-2xl cursor-pointer"
+                title="Projeto Bendita"
+                loading="lazy"
+              />
+              {/* Overlay para permitir o clique de redirecionamento */}
+            </div>
             <a
               href="https://bendita.vercel.app/"
               target="_blank"
-              className="absolute inset-0 bg-transparent"
+              rel="noreferrer"
+              className="text-blue-600 underline"
             >
               {/* Este link cobre o iframe para capturar o clique e te levar ao site */}
+              https://bendita.onlinemuller.codes/
             </a>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }

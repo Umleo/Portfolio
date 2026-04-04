@@ -8,8 +8,6 @@ import ModalSite from './components/ModalSite';
 export default function Home() {
   const [modal, setModal] = useState(false);
 
-  console.log(modal);
-
   return (
     <>
       <div className="flex flex-col items-center justify-center h-full text-white">
@@ -28,8 +26,10 @@ export default function Home() {
               cada vez mais, criei meu portfólio com o objetivo de demonstrar
               meu conhecimento nas mais variadas tecnologias através de projetos
               reais. Amo aprender e enfrentar desafios, me considero uma pessoa
-              autodidata e por isso acredito que nasci para viver de
-              informática.
+              autodidata e por isso acredito que nasci para viver de T.I. Para
+              saber mais sobre mim, pode checar meu curriculo abrindo o menu no
+              canto superior direito, lá tem um link para meu currículo completo
+              e também para minhas redes sociais.
               <br />
               Recomendo começar dando uma olhada nos projetos em destaque logo
               abaixo. Cada projeto e caso de estudo está longamente comentado
@@ -49,7 +49,7 @@ export default function Home() {
           Projetos em Destaque
         </h1>
         <section className="flex flex-col justify-center items-center w-full h-full my-10 bg-black">
-          <Site setModal={setModal} />
+          <Site setModal={setModal} title={'Bendita'} image="/bendita.png" />
         </section>
       </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
             </button>
 
             <div className="h-4/5 w-4/5 border-2 border-white rounded-2xl bg-black">
-              <ModalSite />
+              <ModalSite desenvolvimento={true} />
             </div>
           </div>
         </>
