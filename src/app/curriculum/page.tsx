@@ -192,7 +192,7 @@ export default function Curriculum() {
                     <span className="text-white/60 min-w-fit">•</span>
                     <span>
                       <strong>Frontend</strong> - HTML, CSS, JavaScript,
-                      TypeScript, integração com API RESTful
+                      TypeScript
                     </span>
                   </li>
                   <li className="flex items-start gap-2 sm:gap-3">
