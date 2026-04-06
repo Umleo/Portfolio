@@ -13,7 +13,7 @@ export default function Titulo({ site, title }: SiteProps) {
       {site ? (
         <TypeAnimation
           cursor={false}
-          className={`type text-5xl font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)]  cursor-grab`}
+          className={`type text:2xl sm:text-5xl font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)]  cursor-grab`}
           sequence={[
             '',
             300,
@@ -30,7 +30,7 @@ export default function Titulo({ site, title }: SiteProps) {
       ) : (
         <TypeAnimation
           cursor={false}
-          className={`type font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] text-9xl cursor-grab`}
+          className={`type font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] text-5xl cursor-grab`}
           sequence={[
             '',
             500,

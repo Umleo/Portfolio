@@ -13,15 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased`}>
-      <body className="bg-black flex flex-col">
+    <html lang="en">
+      <body className="bg-black">
         <Navbar />
         {children}
-        <footer className="bg-black text-white text-center py-6">
-          <p>
-            &copy; {new Date().getFullYear()} Meu Portfólio. Todos os direitos
-            reservados.
-          </p>
+        <footer className="bg-black sm:text-base text-xs sm:mx-auto border-t border-neutral-900 sm:max-w-1/2 text-white text-center py-6">
+          <p>Abril - {new Date().getFullYear()} | Desenvolvido por Leonardo</p>
         </footer>
       </body>
     </html>

@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import HoverBox from './utilitarios/HoverBox';
 
 interface contentProps {
   title: string;
   redirect: string;
   blank?: boolean;
+  desenvolved?: boolean;
 }
 
 const DownArrowIcon = ({ isOpen }: { isOpen: boolean }) => (
@@ -15,8 +17,8 @@ const DownArrowIcon = ({ isOpen }: { isOpen: boolean }) => (
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -44,12 +46,14 @@ export default function Dropdown({
   noArrow,
   title,
   content,
+  className,
 }: {
   left?: boolean;
   noArrow?: boolean;
-  title: string;
+  title: string | React.ReactNode;
   content: contentProps[];
   menu?: boolean;
+  className?: string;
 }) {
   // Estado local que controla se ESTA ESPECÍFICA caixa está aberta. Inicialmente é fechada (false).
   const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +62,7 @@ export default function Dropdown({
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <div className="w-fit relative">
+    <div className={`relative w-fit shrink-0 ${className ?? ''}`}>
       {/* 
          O BOTÃO DE CLIQUE
         Esse bloco representa a barra do topo com o título e a setinha. 
@@ -66,9 +70,15 @@ export default function Dropdown({
       */}
       <div
         onClick={toggleOpen}
-        className="flex items-center gap-2 cursor-pointer select-none"
+        className="flex items-center gap-0 sm:gap-2 cursor-pointer select-none"
       >
-        <h1 className="text-2xl font-bold">{title}</h1>
+        {typeof title === 'string' ? (
+          <h1 className="text:3xl sm:text-[clamp(0.5rem,1.6vw,1.5rem)] font-bold leading-none">
+            {title}
+          </h1>
+        ) : (
+          title
+        )}
         {!noArrow && <DownArrowIcon isOpen={isOpen} />}
       </div>
 
@@ -78,22 +88,31 @@ export default function Dropdown({
         Note o "{isOpen && ( ...div... )}": a tradução é algo como "Se isOpen for verdadeiro, mostre o seguinte HTML".
       */}
       {isOpen && (
-        //right-0 para forcar box a renderizaar para a esquerda, caso a prop "left" seja verdadeira
         <div
-          className={`${left && 'right-0'} mt-1 w-auto min-h-auto bg-gray-100 border border-black rounded-md shadow-lg p-4 text-left absolute whitespace-nowrap animate-my`}
+          className={`mt-1 absolute h-auto w-auto whitespace-nowrap rounded-md border border-black bg-gray-100 p-3 text-left shadow-lg animate-my sm:p-4 ${left ? 'right-0' : 'left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0'}`}
         >
           {/* O dangerouslySetInnerHTML converte a nossa string de conteúdo em HTML de verdade para ler tags como o "<br />" que usamos la no topo */}
-          <div className="flex flex-col gap-2 text-black">
+          <div className="flex flex-col gap-2 text-sm text-black sm:text-base">
             {content.map((item, key) => (
               <div key={key}>
-                <Link
-                  href={item.redirect || '#'}
-                  target={item.blank ? '_blank' : ''}
-                  className="my-2 cursor-pointer"
-                >
-                  {item.title}
-                </Link>
-                <hr className=" m-auto border-neutral-200 w-11/12" />
+                {item.desenvolved ? (
+                  <span className="text-gray-400 group relative cursor-not-allowed">
+                    {item.title}
+                    <HoverBox />
+                  </span>
+                ) : (
+                  <>
+                    <Link
+                      href={item.redirect || '#'}
+                      target={item.blank ? '_blank' : ''}
+                      onClick={() => setIsOpen(false)}
+                      className="my-2 cursor-pointer"
+                    >
+                      {item.title}
+                    </Link>
+                    <hr className=" m-auto border-neutral-200 w-11/12" />
+                  </>
+                )}
               </div>
             ))}
           </div>
