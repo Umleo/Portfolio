@@ -15,6 +15,12 @@ export default function Curriculum() {
 
   return (
     <>
+      {certificadoModal && (
+        <ModalCertificado
+          setModal={setCertificadoModal}
+          name={certificadoName}
+        />
+      )}
       <section className="flex items-center justify-center p-3 text-white sm:p-6">
         <article className="flex w-full max-w-5xl flex-col rounded-xl bg-gray-800 minimal-scrollbar sm:rounded-2xl lg:w-1/2">
           {/* Cabeçalho: foto centralizada com nome sobreposto */}
@@ -245,13 +251,6 @@ export default function Curriculum() {
           </section>
         </article>
       </section>
-
-      {certificadoModal && (
-        <ModalCertificado
-          setModal={setCertificadoModal}
-          name={certificadoName}
-        />
-      )}
     </>
   );
 }
