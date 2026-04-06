@@ -109,7 +109,9 @@ export default function Curriculum() {
                       className="hover:underline cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleClickCertificado('Hashtag');
+                        handleClickCertificado(
+                          'Curso Python_ aplicando a Orientação a Objetos - Alura'
+                        );
                       }}
                     >
                       <strong>Alura</strong> - Python: Aplicando a Orientação a
@@ -122,9 +124,7 @@ export default function Curriculum() {
                       className="hover:underline cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleClickCertificado(
-                          'Curso Python_ aplicando a Orientação a Objetos - Alura'
-                        );
+                        handleClickCertificado('Hashtag');
                       }}
                     >
                       <strong>Hashtag Treinamentos</strong> - Jornada Python
