@@ -89,7 +89,7 @@ export default function Dropdown({
       */}
       {isOpen && (
         <div
-          className={`mt-1 absolute h-auto w-auto whitespace-nowrap rounded-md border border-black bg-gray-100 p-3 text-left shadow-lg animate-my sm:p-4 ${left ? 'right-0' : 'left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0'}`}
+          className={`mt-1 absolute z-50 h-auto w-auto whitespace-nowrap rounded-md border border-black bg-gray-100 p-3 text-left shadow-lg animate-my sm:p-4 ${left ? 'right-0' : 'left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0'}`}
         >
           {/* O dangerouslySetInnerHTML converte a nossa string de conteúdo em HTML de verdade para ler tags como o "<br />" que usamos la no topo */}
           <div className="flex flex-col gap-2 text-sm text-black sm:text-base">

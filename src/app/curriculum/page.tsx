@@ -21,10 +21,10 @@ export default function Curriculum() {
           name={certificadoName}
         />
       )}
-      <section className="flex items-center justify-center p-3 text-white sm:p-6">
+      <section className="flex  items-center justify-center p-3 text-white sm:p-6">
         <article className="flex w-full max-w-5xl flex-col rounded-xl bg-gray-800 minimal-scrollbar sm:rounded-2xl lg:w-1/2">
           {/* Cabeçalho: foto centralizada com nome sobreposto */}
-          <section className="relative flex flex-col items-center justify-center bg-linear-to-b px-4 pb-8 pt-6 sm:pb-12 sm:pt-12">
+          <section className="relative z-10 flex flex-col items-center justify-center bg-linear-to-b px-4 pb-8 pt-6 sm:pb-12 sm:pt-12">
             <div className="relative mb-5 flex w-full items-center justify-center sm:mb-6">
               <div className="relative flex h-28 w-28 items-center justify-center rounded-full text-sm shadow-[0_0_40px_rgba(255,255,255,0.1)] sm:h-48 sm:w-48">
                 <Image
