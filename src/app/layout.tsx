@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
+import Footer from './components/footer';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Portfólio - Leonardo',
@@ -13,13 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-black">
-        <Navbar />
-        {children}
-        <footer className="bg-black sm:text-base text-xs sm:mx-auto border-t border-neutral-900 sm:max-w-1/2 text-white text-center py-6">
-          <p>Abril - {new Date().getFullYear()} | Desenvolvido por Leonardo</p>
-        </footer>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body>
+        <ThemeProvider defaultTheme="dark" enableSystem={false}>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

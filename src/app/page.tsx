@@ -17,7 +17,7 @@ export default function Home() {
         </section>
 
         <section className="flex justify-center items-center mb-10 sm:mb-20 sm:px-4">
-          <div className="sm:w-3/4 w-full m-2 h-auto overflow-hidden bg-black rounded-3xl border border-transparent shadow-[0_0_24px_rgba(255,255,255,0.10)] p-4 sm:p-8 transform transition-all duration-300 ease-out hover:scale-105 hover:border-white/30 ">
+          <div className="sm:w-3/4 w-full m-2 h-auto overflow-hidden bg-neutral-900 rounded-3xl border border-transparent shadow-[0_0_24px_rgba(255,255,255,0.10)] p-4 sm:p-8 transform transition-all duration-300 ease-out hover:scale-105 hover:border-white/30 ">
             <h2 className="text-white text-center sm:text-start font-bold mb-4 text-3xl">
               Eu aqui!!!
             </h2>
@@ -61,13 +61,13 @@ export default function Home() {
           </div>
         </section>
 
-        <hr className="border-neutral-900 border-2 w-2/5" />
+        <hr className="border-neutral-600 border-2 w-2/5" />
 
         {/* projetos em destaque */}
         <h1 className="text-3xl text-center mb:text-start font-bold text-white mt-10 sm:mt-20">
           Projetos em Destaque
         </h1>
-        <section className="flex flex-col justify-center items-center w-full h-full p-2 my-10 bg-black">
+        <section className="flex flex-col justify-center items-center w-full h-full p-2 my-10 ">
           <Site setModal={setModal} title={'Bendita'} image="/bendita.png" />
         </section>
       </div>

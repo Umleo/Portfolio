@@ -2,6 +2,7 @@
 
 import Titulo from './Titulo';
 import { useSiteTitle } from '../store/siteModal';
+import Image from 'next/image';
 
 type ModalSiteProps = {
   desenvolvimento?: boolean;
@@ -19,7 +20,7 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
               <Titulo site={true} title="Projeto Bendita" />
             </div>
             {/* minimal-scrollbar - definições no arquivo css */}
-            <div className="minimal-scrollbar flex flex-col items-center overflow-auto">
+            <div className="minimal-scrollbar flex flex-col items-center overflow-y-auto overflow-x-hidden">
               <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl">
                 <b>📌 Sobre o projeto:</b>
                 <br /> Este projeto tem como objetivo simular o funcionamento de
@@ -92,9 +93,16 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
             <div className="relative h-50 w-full max-w-md overflow-hidden rounded-2xl bg-gray-800 sm:h-112 lg:h-170 lg:w-120">
               <iframe
                 src="https://bendita.vercel.app/"
-                className="w-full h-full rounded-2xl cursor-pointer"
+                className="hidden w-full h-full rounded-2xl cursor-pointer sm:block"
                 title="Projeto Bendita"
                 loading="lazy"
+              />
+              <Image
+                src={'/bendita.png'}
+                alt="Imagem do site"
+                height={288}
+                width={480}
+                className="rounded-3xl h-full w-full object-cover cursor-pointer sm:hidden"
               />
               {/* Overlay para permitir o clique de redirecionamento */}
               <a

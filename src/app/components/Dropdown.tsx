@@ -47,6 +47,8 @@ export default function Dropdown({
   title,
   content,
   className,
+  menu,
+  page,
 }: {
   left?: boolean;
   noArrow?: boolean;
@@ -54,6 +56,7 @@ export default function Dropdown({
   content: contentProps[];
   menu?: boolean;
   className?: string;
+  page?: string;
 }) {
   // Estado local que controla se ESTA ESPECÍFICA caixa está aberta. Inicialmente é fechada (false).
   const [isOpen, setIsOpen] = useState(false);
@@ -89,33 +92,46 @@ export default function Dropdown({
       */}
       {isOpen && (
         <div
-          className={`mt-1 absolute z-50 h-auto w-auto whitespace-nowrap rounded-md border border-black bg-gray-100 p-3 text-left shadow-lg animate-my sm:p-4 ${left ? 'right-0' : 'left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0'}`}
+          className={`mt-1 absolute z-50 h-auto w-auto whitespace-nowrap rounded-md border border-black bg-linear-to-l from-neutral-200 to-neutral-100 p-3 text-left shadow-lg animate-my sm:p-2 ${left ? 'right-0' : 'left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0'}`}
         >
           {/* O dangerouslySetInnerHTML converte a nossa string de conteúdo em HTML de verdade para ler tags como o "<br />" que usamos la no topo */}
           <div className="flex flex-col gap-2 text-sm text-black sm:text-base">
             {content.map((item, key) => (
               <div key={key}>
                 {item.desenvolved ? (
-                  <span className="text-gray-400 group relative cursor-not-allowed">
-                    {item.title}
-                    <HoverBox />
-                  </span>
+                  <>
+                    <span className="text-gray-400 group relative cursor-not-allowed">
+                      {item.title}
+                      <HoverBox />
+                    </span>
+                  </>
                 ) : (
                   <>
                     <Link
                       href={item.redirect || '#'}
                       target={item.blank ? '_blank' : ''}
                       onClick={() => setIsOpen(false)}
-                      className="my-2 cursor-pointer"
+                      className="cursor-pointer border p-1 rounded-md border-gray-300 hover:bg-gray-200 transition-colors duration-200 block"
                     >
                       {item.title}
                     </Link>
-                    <hr className=" m-auto border-neutral-200 w-11/12" />
                   </>
                 )}
               </div>
             ))}
           </div>
+          {menu
+            ? null
+            : content.length > 2 && (
+                <span className="hidden sm:flex justify-start mt-1 cursor-pointer">
+                  <Link
+                    href={page || '#'}
+                    className="text-sm font-bold text-black p-1"
+                  >
+                    Mais...
+                  </Link>
+                </span>
+              )}
         </div>
       )}
     </div>

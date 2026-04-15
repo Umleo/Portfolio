@@ -21,10 +21,10 @@ export default function Curriculum() {
           name={certificadoName}
         />
       )}
-      <section className="flex  items-center justify-center p-3 text-white sm:p-6">
-        <article className="flex w-full max-w-5xl flex-col rounded-xl bg-gray-800 minimal-scrollbar sm:rounded-2xl lg:w-1/2">
+      <section className="flex items-center justify-center p-3 text-white sm:p-6">
+        <article className="flex w-full max-w-5xl flex-col rounded-xl bg-gray-800 minimal-scrollbar sm:rounded-2xl lg:w-4/5">
           {/* Cabeçalho: foto centralizada com nome sobreposto */}
-          <section className="relative z-10 flex flex-col items-center justify-center bg-linear-to-b px-4 pb-8 pt-6 sm:pb-12 sm:pt-12">
+          <section className="relative z-10 flex flex-col items-center justify-center bg-linear-to-b px-2 pb-8 pt-6  sm:p-12">
             <div className="relative mb-5 flex w-full items-center justify-center sm:mb-6">
               <div className="relative flex h-28 w-28 items-center justify-center rounded-full text-sm shadow-[0_0_40px_rgba(255,255,255,0.1)] sm:h-48 sm:w-48">
                 <Image
@@ -52,7 +52,9 @@ export default function Curriculum() {
             </div>
 
             {/* Corpo principal*/}
-            <main className="flex-1 w-full max-w-4xl space-y-4 overflow-x-hidden p-3 sm:space-y-6 sm:p-8">
+            <main className="flex-1 w-full space-y-4 overflow-x-hidden px-3 sm:px-0 sm:space-y-6">
+              <hr className="my-6 w-full border border-white/40 sm:my-6" />
+
               {/* Formação Acadêmica */}
               <section className="rounded-xl border border-white/10 bg-black/20 p-3 sm:p-5">
                 <h2 className="mb-3 text-base font-semibold text-white sm:mb-4 sm:text-lg">
@@ -234,6 +236,8 @@ export default function Curriculum() {
                   </li>
                 </ul>
               </section>
+
+              <hr className="my-6 w-full border-2 border-white/60 sm:my-10" />
 
               {/* Projetos */}
               <section className="rounded-xl border border-white/10 bg-black/20 p-3 sm:p-5">
