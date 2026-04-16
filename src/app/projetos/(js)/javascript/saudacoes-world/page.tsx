@@ -40,6 +40,19 @@ export default function saudacoes_world() {
             {/* minimal-scrollbar - definições no arquivo css */}
             <div className="minimal-scrollbar flex flex-col items-center overflow-y-auto lg:h-10/12 lg:w-full">
               <p className={paragrafosClass}>
+                <b>AVISO!</b>
+                <br /> A API originalmente proposta para o desafio não permite
+                requisições HTTPS gratuitamente, isso resulta em um erro de
+                Mixed Content, onde o navegador impede a requisição não segura
+                (HTTP), impossibilitando o funcionamento do projeto. Para
+                contornar esssa limitação, foi criado uma API interna utilizando
+                Route Handler do Next.js, que funciona como um proxy, fazendo a
+                requisição do lado do servidor e retornando os dados ao cliente,
+                porém, dessa maneira, a devolução dos dados será sempre a partir
+                da localização do servidor e não do cliente.
+              </p>
+              <hr className="my-4 w-4/5 border-2 border-white/60" />
+              <p className={paragrafosClass}>
                 <b>📌 Sobre o projeto:</b>
                 <br /> Este projeto consiste em uma simples aplicação que saúda
                 o usuário em sua língua nativa com base no seu (IP). O
