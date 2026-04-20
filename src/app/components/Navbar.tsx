@@ -81,7 +81,7 @@ export default function Navbar() {
         content={[
           {
             title: 'JavaScript',
-            redirect: '/projetos/javascript',
+            redirect: '/projetos/javascript/saudacoes-world',
             blank: true,
           },
           {

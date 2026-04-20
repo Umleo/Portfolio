@@ -22,7 +22,7 @@ export default function Site({
       alt="Imagem do site"
       height={288}
       width={480}
-      className="rounded-3xl object-cover cursor-pointer"
+      className={`rounded-3xl object-cover cursor-pointer animate-pulse-interactive sm:animate-none`}
     />
   );
 }

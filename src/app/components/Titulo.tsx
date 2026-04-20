@@ -14,13 +14,13 @@ export default function Titulo({ site, title, sxl }: SiteProps) {
       {site ? (
         <TypeAnimation
           cursor={false}
-          className={`type  ${sxl ? 'text-2xl' : 'sm:text-5xl'} font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)]  cursor-grab`}
+          className={`cursor-animation  ${sxl ? 'text-2xl' : 'sm:text-5xl'} font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] cursor-grab`}
           sequence={[
             '',
             300,
             title!,
             1000,
-            (el) => el!.classList.remove('type'),
+            (el) => el!.classList.remove('cursor-animation'),
             // A reference to the element gets passed as the first argument of a callback function
           ]}
           wrapper="span"
@@ -31,7 +31,7 @@ export default function Titulo({ site, title, sxl }: SiteProps) {
       ) : (
         <TypeAnimation
           cursor={false}
-          className={`type font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] text-5xl cursor-grab`}
+          className={`cursor-animation font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] text-5xl sm:text-7xl cursor-grab`}
           sequence={[
             '',
             500,
@@ -43,7 +43,7 @@ export default function Titulo({ site, title, sxl }: SiteProps) {
             500,
             'Bem-Vindo!',
             1500,
-            (el) => el!.classList.remove('type'), // A reference to the element gets passed as the first argument of a callback function
+            (el) => el!.classList.remove('cursor-animation'), // A reference to the element gets passed as the first argument of a callback function
           ]}
           wrapper="span"
           speed={60}

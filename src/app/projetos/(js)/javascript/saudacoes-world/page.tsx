@@ -102,7 +102,7 @@ export default function saudacoes_world() {
               </p>
             </div>
             <a
-              href="https://github.com/Umleo/Bendita"
+              href="https://github.com/Umleo/mini-projetos/tree/main/saudacoesWorld"
               target="_blank"
               className="text-blue-600 m-3 underline hidden lg:block"
             >
