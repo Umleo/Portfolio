@@ -3,6 +3,7 @@
 import Titulo from './Titulo';
 import { useSiteTitle } from '../store/siteModal';
 import Image from 'next/image';
+import { useState } from 'react';
 
 type ModalSiteProps = {
   desenvolvimento?: boolean;
@@ -10,6 +11,13 @@ type ModalSiteProps = {
 
 export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
   const { title } = useSiteTitle();
+
+  // showmore para mobile
+  const [sobre, setSobre] = useState(false);
+  const [tecnologias, setTecnologias] = useState(false);
+  const [status, setStatus] = useState(false);
+  const [infra, setInfra] = useState(false);
+  const [aprendizado, setAprendizado] = useState(false);
 
   return (
     <>
@@ -21,56 +29,104 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
             </div>
             {/* minimal-scrollbar - definições no arquivo css */}
             <div className="minimal-scrollbar flex flex-col items-center overflow-y-auto overflow-x-hidden">
-              <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl">
-                <b>📌 Sobre o projeto:</b>
-                <br /> Este projeto tem como objetivo simular o funcionamento de
-                uma loja de pedidos, utilizando como exemplo um restaurante
-                fictício chamado Bendita. Com foco em dispositivos mobile, o
-                usuário pode navegar pela página inicial, visualizar os produtos
-                disponíveis e, ao selecionar um item (Monte sua salada!),
-                personalizá-lo conforme as opções definidas. Além da experiência
-                do cliente, o sistema irá contar com uma área administrativa
-                onde é possível gerenciar os pedidos realizados, incluindo
-                atualização de status (como preparo, envio e entrega), controle
-                de funcionamento da loja (aberto/fechado) e disponibilidade e
-                gerenciamento dos produtos.
-                <br />
-              </p>
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={`${sobre ? 'max-h-full' : 'max-h-40'} overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  <b>📌 Sobre o projeto:</b>
+                  <br /> Este projeto tem como objetivo simular o funcionamento
+                  de uma loja de pedidos, utilizando como exemplo um restaurante
+                  fictício chamado Bendita. Com foco em dispositivos mobile, o
+                  usuário pode navegar pela página inicial, visualizar os
+                  produtos disponíveis e, ao selecionar um item (Monte sua
+                  salada!), personalizá-lo conforme as opções definidas. Além da
+                  experiência do cliente, o sistema irá contar com uma área
+                  administrativa onde é possível gerenciar os pedidos
+                  realizados, incluindo atualização de status (como preparo,
+                  envio e entrega), controle de funcionamento da loja
+                  (aberto/fechado) e disponibilidade e gerenciamento dos
+                  produtos.
+                  <br />
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSobre(!sobre)}
+                  className="m-2 text-sm font-semibold text-blue-300 sm:hidden"
+                >
+                  {sobre ? 'Mostrar menos' : 'Ver mais'}
+                </button>
+              </div>
+
               <hr className="my-4 w-4/5 border-2 border-white/60" />
-              <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:min-w-190 lg:text-2xl">
-                <b>🛠 Tecnologias utilizadas:</b>
-                <br />* Next.js (frontend e backend)
-                <br />* Tailwind CSS
-                <br />* PostgreSQL / Prisma ORM
-                <br />* Better Auth (autenticação)
-              </p>
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={`max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  <b>🛠 Tecnologias utilizadas:</b>
+                  <br />* Next.js (frontend e backend)
+                  <br />* Tailwind CSS
+                  <br />* PostgreSQL / Prisma ORM
+                  <br />* Better Auth (autenticação)
+                </p>
+              </div>
+
               <hr className="my-4 w-4/5 border-2 border-white/60" />
-              <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:min-w-190 lg:text-2xl">
-                <b>☁️ Infraestrutura:</b>
-                <br />* Deploy: Vercel
-                <br />* Banco de dados: NeonDB
-              </p>
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={`max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  {' '}
+                  <b>☁️ Infraestrutura:</b>
+                  <br />* Deploy: Vercel
+                  <br />* Banco de dados: NeonDB
+                </p>
+              </div>
+
               <hr className="my-4 w-4/5 border-2 border-white/60" />
-              <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl">
-                <b>🚧 Status do projeto:</b>
-                <br />
-                * Interface da página inicial <br />
-                * Lógica de criação de pedidos
-                <br /> * Sistema de autenticação <br />
-                * Registro de endereços <br />O projeto segue em
-                desenvolvimento, com foco na evolução do painel administrativo e
-                melhorias na experiência do usuário.
-              </p>
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={`${status ? 'max-h-full' : 'max-h-40'} max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  {' '}
+                  <b>🚧 Status do projeto:</b>
+                  <br />
+                  * Interface da página inicial <br />
+                  * Lógica de criação de pedidos
+                  <br /> * Sistema de autenticação <br />
+                  * Registro de endereços <br />O projeto segue em
+                  desenvolvimento, com foco na evolução do painel administrativo
+                  e melhorias na experiência do usuário.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus(!status)}
+                  className="m-2 text-sm font-semibold text-blue-300 sm:hidden"
+                >
+                  {status ? 'Mostrar menos' : 'Ver mais'}
+                </button>
+              </div>
+
               <hr className="my-4 w-4/5 border-2 border-white/60" />
-              <p className="w-full max-w-full cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl">
-                <b>📚 Aprendizados:</b>
-                <br />
-                Este é meu primeiro projeto fullstack, desenvolvido com o
-                objetivo de consolidar e integrar conhecimentos em
-                desenvolvimento web. Durante sua construção, venho trabalhando
-                na implementação de boas práticas, organização de código e
-                integração entre frontend, backend e banco de dados.
-              </p>
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={`${aprendizado ? 'max-h-full' : 'max-h-40'} max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  <b>📚 Aprendizados:</b>
+                  <br />
+                  Este é meu primeiro projeto fullstack, desenvolvido com o
+                  objetivo de consolidar e integrar conhecimentos em
+                  desenvolvimento web. Durante sua construção, venho trabalhando
+                  na implementação de boas práticas, organização de código e
+                  integração entre frontend, backend e banco de dados.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setAprendizado(!aprendizado)}
+                  className="m-2 text-sm font-semibold text-blue-300 sm:hidden"
+                >
+                  {aprendizado ? 'Mostrar menos' : 'Ver mais'}
+                </button>
+              </div>
               <a
                 href="https://github.com/Umleo/Bendita"
                 target="_blank"

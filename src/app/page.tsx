@@ -48,11 +48,11 @@ export default function Home() {
           </h2>
           {/* <p className="text-white text-lg opacity-90"> */}
           <div
-            className={`${showMoreIntro ? 'max-h-249.75' : 'max-h-50'} overflow-hidden sm:max-h-none`}
+            className={`${showMoreIntro ? 'max-h-full' : 'max-h-50'} overflow-hidden sm:max-h-none`}
           >
             <p className="text-white w-full text-xs leading-relaxed sm:text-base">
               &emsp;Olá!! Este é o meu portfólio, onde vou contar um pouco mais
-              sobre mim e, ao navegar pelo site, você pode checar todos os meus
+              sobre mim, e ao navegar pelo site, você pode checar todos os meus
               projetos pessoais e casos de estudo.
               <br />
               <br />
@@ -67,12 +67,12 @@ export default function Home() {
               <br />
               <br />
               &emsp;Recomendo começar dando uma olhada nos projetos em destaque
-              logo abaixo. Cada projeto e caso de estudo está longamente
-              comentado sobre a stack usada, motivo para existir e o que eu mais
-              aprendi durante sua criação, alguns projetos ainda podem estar em
-              desenvolvimento, estes estarão com uma tag sinalizando. O código
-              de cada um estará disponivel no Github e o link de seu repositório
-              estará presente na descrição do projeto.
+              . Cada projeto e caso de estudo está longamente comentado sobre a
+              stack usada, motivo para existir e o que eu mais aprendi durante
+              sua criação, alguns projetos ainda podem estar em desenvolvimento,
+              estes estarão com uma tag sinalizando. O código de cada um estará
+              disponivel no Github e o link de seu repositório estará presente
+              na descrição do projeto.
             </p>
           </div>
           <button
