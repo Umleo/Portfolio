@@ -31,7 +31,7 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
             <div className="minimal-scrollbar flex flex-col items-center overflow-y-auto overflow-x-hidden">
               <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
                 <p
-                  className={`${sobre ? 'max-h-full' : 'max-h-40'} overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                  className={`${aprendizado ? 'max-h-full' : 'max-h-40'} max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
                 >
                   <b>📌 Sobre o projeto:</b>
                   <br /> Este projeto tem como objetivo simular o funcionamento
