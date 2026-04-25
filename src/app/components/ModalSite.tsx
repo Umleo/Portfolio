@@ -154,7 +154,7 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
                 loading="lazy"
               />
               <Image
-                src={'/bendita.png'}
+                src={'/projetos/bendita/bendita.png'}
                 alt="Imagem do site"
                 height={288}
                 width={480}

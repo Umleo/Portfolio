@@ -20,7 +20,7 @@ export default function Site({
   };
 
   return (
-    <div className="relative h-[240px] w-[280px] lg:h-[320px] lg:w-[380px] lg:hover:scale-105">
+    <div className="relative h-[240px] w-[300px] lg:h-[320px] lg:w-[380px] lg:hover:scale-105">
       <Image
         onClick={handleClick}
         src={image || ''}

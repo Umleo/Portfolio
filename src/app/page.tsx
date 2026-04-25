@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-full text-white">
-        <section className="h-20 flex flex-col justify-center items-center my-20">
+        <section className="h-20 flex flex-col justify-center items-center my-14">
           <Titulo />
         </section>
 
