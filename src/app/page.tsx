@@ -18,9 +18,20 @@ export default function Home() {
 
         {/* projetos em destaque */}
         <section className="flex flex-col justify-center items-center w-full p-2 gap-6 [&>*:nth-child(n+3)]:hidden sm:p-0 sm:flex-row sm:flex-wrap sm:[&>*:nth-child(n+3)]:block">
-          <Site setModal={setModal} title={'Bendita'} image="/bendita.png" />
+          <Site
+            setModal={setModal}
+            dev={true}
+            title={'Bendita'}
+            image="/projetos/bendita/bendita.png"
+          />
+          <Site
+            setModal={setModal}
+            dev={false}
+            title={'NFE Manager'}
+            image="/projetos/nfe-manager/nfe(25).png"
+          />
         </section>
-        <hr className="border-neutral-600 border-2 w-3/5 sm:w-2/5 my-10" />
+        <hr className="border-neutral-600 border-2 w-3/5 sm:w-2/5 my-8 lg:my-10" />
       </div>
 
       {/* modal com infos sobre o projeto */}
@@ -35,7 +46,7 @@ export default function Home() {
             </button>
 
             <div className="h-4/5 w-4/5 border-2 border-white rounded-2xl bg-black">
-              <ModalSite desenvolvimento={true} />
+              <ModalSite />
             </div>
           </div>
         </>

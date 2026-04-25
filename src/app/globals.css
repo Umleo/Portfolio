@@ -22,14 +22,15 @@
 
 /*animação de pulsação para sinalizar interatividade */
 @theme {
-  --animate-pulse-interactive: pulse-interactive 2s ease-in-out infinite;
+  --animate-pulse-interactive: pulse-interactive 4s ease-in-out infinite;
   @keyframes pulse-interactive {
     0%,
     100% {
       transform: scale(1);
+      border: 2px solid rgba(0, 0, 0, 1);
     }
     50% {
-      box-shadow: 0 0 24px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
       transform: scale(1.01);
     }
   }
