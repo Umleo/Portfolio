@@ -16,22 +16,66 @@ export default function Home() {
           <Titulo />
         </section>
 
+        <section className="flex justify-center items-center sm:px-4">
+          <div className="sm:w-3/4 w-full m-2 h-auto overflow-hidden bg-neutral-900 rounded-3xl border border-transparent shadow-[0_0_24px_rgba(255,255,255,0.10)] p-4 sm:p-8 transform transition-all duration-300 ease-out hover:scale-105 hover:border-white/30 ">
+            <h2 className="text-white text-center sm:text-start font-bold mb-4 text-3xl">
+              Eu aqui!!!
+            </h2>
+            {/* <p className="text-white text-lg opacity-90"> */}
+            <div
+              className={`${showMoreIntro ? 'max-h-full' : 'max-h-50'} overflow-hidden sm:max-h-none`}
+            >
+              <p className="text-white w-full text-xs leading-relaxed sm:text-base">
+                &emsp;Olá!! Este é o meu portfólio, onde vou contar um pouco
+                mais sobre mim, e ao navegar pelo site, você pode checar todos
+                os meus projetos pessoais e casos de estudo.
+                <br />
+                <br />
+                &emsp;Sou um apaixonado estudante de tecnologia e em busca de me
+                profissionalizar cada vez mais, criei meu portfólio com o
+                objetivo de demonstrar meu conhecimento nas mais variadas
+                tecnologias através de projetos reais. Amo aprender e enfrentar
+                desafios, me considero uma pessoa autodidata e por isso acredito
+                que nasci para a T.I. Para saber mais sobre mim, pode checar meu
+                curriculo abrindo o menu no canto superior direito, lá tem um
+                link para meu currículo completo e também para minhas redes
+                sociais.
+                <br />
+                <br />
+                &emsp;Recomendo começar dando uma olhada nos projetos em
+                destaque . Cada projeto e caso de estudo está longamente
+                comentado sobre a stack usada, motivo para existir e o que eu
+                mais aprendi durante sua criação, alguns projetos ainda podem
+                estar em desenvolvimento, estes estarão com uma tag sinalizando.
+                O código de cada um estará disponivel no Github e o link de seu
+                repositório estará presente na descrição do projeto.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowMoreIntro(!showMoreIntro)}
+              className="mt-3 text-sm font-semibold text-blue-300 sm:hidden"
+            >
+              {showMoreIntro ? 'Mostrar menos' : 'Ver mais'}
+            </button>
+          </div>
+        </section>
+        <hr className="border-neutral-600 border-2 w-3/5 sm:w-2/5 my-8 lg:my-10" />
         {/* projetos em destaque */}
-        <section className="flex flex-col justify-center items-center w-full p-2 gap-6 [&>*:nth-child(n+3)]:hidden sm:p-0 sm:flex-row sm:flex-wrap sm:[&>*:nth-child(n+3)]:block">
+        <section className="flex mb-10 sm:mb-20 flex-col justify-center items-center w-full p-2 gap-6 [&>*:nth-child(n+3)]:hidden sm:p-0 sm:flex-row sm:flex-wrap sm:[&>*:nth-child(n+3)]:block">
           <Site
             setModal={setModal}
             dev={true}
             title={'Bendita'}
-            image="/projetos/bendita/bendita.png"
+            image="/projetos/bendita/ProjetoBendita(1).png"
           />
           <Site
             setModal={setModal}
             dev={false}
             title={'NFE Manager'}
-            image="/projetos/nfe-manager/nfe(25).png"
+            image="/projetos/nfe-manager/Projeto nfe.png"
           />
         </section>
-        <hr className="border-neutral-600 border-2 w-3/5 sm:w-2/5 my-8 lg:my-10" />
       </div>
 
       {/* modal com infos sobre o projeto */}
@@ -51,50 +95,6 @@ export default function Home() {
           </div>
         </>
       )}
-
-      <section className="flex justify-center items-center mb-10 sm:mb-20 sm:px-4">
-        <div className="sm:w-3/4 w-full m-2 h-auto overflow-hidden bg-neutral-900 rounded-3xl border border-transparent shadow-[0_0_24px_rgba(255,255,255,0.10)] p-4 sm:p-8 transform transition-all duration-300 ease-out hover:scale-105 hover:border-white/30 ">
-          <h2 className="text-white text-center sm:text-start font-bold mb-4 text-3xl">
-            Eu aqui!!!
-          </h2>
-          {/* <p className="text-white text-lg opacity-90"> */}
-          <div
-            className={`${showMoreIntro ? 'max-h-full' : 'max-h-50'} overflow-hidden sm:max-h-none`}
-          >
-            <p className="text-white w-full text-xs leading-relaxed sm:text-base">
-              &emsp;Olá!! Este é o meu portfólio, onde vou contar um pouco mais
-              sobre mim, e ao navegar pelo site, você pode checar todos os meus
-              projetos pessoais e casos de estudo.
-              <br />
-              <br />
-              &emsp;Sou um apaixonado estudante de tecnologia e em busca de me
-              profissionalizar cada vez mais, criei meu portfólio com o objetivo
-              de demonstrar meu conhecimento nas mais variadas tecnologias
-              através de projetos reais. Amo aprender e enfrentar desafios, me
-              considero uma pessoa autodidata e por isso acredito que nasci para
-              a T.I. Para saber mais sobre mim, pode checar meu curriculo
-              abrindo o menu no canto superior direito, lá tem um link para meu
-              currículo completo e também para minhas redes sociais.
-              <br />
-              <br />
-              &emsp;Recomendo começar dando uma olhada nos projetos em destaque
-              . Cada projeto e caso de estudo está longamente comentado sobre a
-              stack usada, motivo para existir e o que eu mais aprendi durante
-              sua criação, alguns projetos ainda podem estar em desenvolvimento,
-              estes estarão com uma tag sinalizando. O código de cada um estará
-              disponivel no Github e o link de seu repositório estará presente
-              na descrição do projeto.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setShowMoreIntro(!showMoreIntro)}
-            className="mt-3 text-sm font-semibold text-blue-300 sm:hidden"
-          >
-            {showMoreIntro ? 'Mostrar menos' : 'Ver mais'}
-          </button>
-        </div>
-      </section>
     </>
   );
 }

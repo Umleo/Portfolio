@@ -258,13 +258,11 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
                 >
                   <b>📚 Aprendizados:</b>
                   <br />
-                  * Python & Dados: Extração de dados através de arquivos XML.
+                  * Python & Dados: extração de dados através de arquivos XML.
                   <br />
                   * Criação de interface gráfica para consumir arquivos. <br />*
-                  Full Stack & APIs - <br />
-                  &emsp;FastAPI: Criação de rotas RESTful. <br />
-                  &emsp;React: Consumo de APIs. <br />
-                  * Containerização e Orquestração- <br />
+                  API: criação de rotas RESTful. <br />
+                  * Containerização e Orquestração - <br />
                   &emsp;Isolamento de Frontend (Nginx) e Backend. <br />
                   &emsp;Uso de Docker Compose para comunicação.
                 </p>
@@ -275,6 +273,15 @@ export default function ModalSite({ desenvolvimento = false }: ModalSiteProps) {
                 >
                   {aprendizado ? 'Mostrar menos' : 'Ver mais'}
                 </button>
+              </div>
+
+              <hr className="my-4 w-4/5 border-2 border-white/60" />
+              <div className="rounded-2xl bg-neutral-900 flex flex-col w-full">
+                <p
+                  className={` max-h-40 sm:max-h-full overflow-hidden cursor-text  p-4 text-sm leading-relaxed sm:p-6 sm:text-lg lg:max-w-190 lg:text-2xl`}
+                >
+                  Mais informações no repositório Github.
+                </p>
               </div>
               <a
                 href="https://github.com/Umleo/nfe-manager"
