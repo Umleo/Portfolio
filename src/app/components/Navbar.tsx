@@ -19,14 +19,6 @@ export default function Navbar() {
   const noArrow = true;
   const left = true;
 
-  //PROEJTOS E CAMINHOS
-  const javascriptProjects = {
-    saudacoesWorld: {
-      title: 'SaudaçõesWorld',
-      redirect: '/projetos/javascript/saudacoes-world',
-    },
-  };
-
   return (
     <nav className="flex flex-wrap items-center justify-between gap-3 bg-linear-to-r from-neutral-600 to-neutral-950 px-4 py-3 text-base text-white shadow-[0_6px_14px_rgba(82,82,82,0.35),0_10px_24px_rgba(10,10,10,0.5)] sm:flex-nowrap sm:px-10 sm:py-1 sm:text-2xl">
       {buttonHome ? (
@@ -49,14 +41,14 @@ export default function Navbar() {
         />
       )}
 
+      {/* PROJETOS */}
       <Dropdown
-        title="Artigos"
+        title="Shell"
         className="hidden sm:block sm:order-0"
         content={[
           {
-            title: 'Distros Linux',
-            redirect: '/',
-            desenvolved: true,
+            title: 'Status-Server',
+            redirect: '/projetos/linux/status-server',
           },
         ]}
       />
@@ -67,9 +59,8 @@ export default function Navbar() {
         className="hidden sm:block sm:order-0"
         content={[
           {
-            title: javascriptProjects.saudacoesWorld.title,
-            redirect: javascriptProjects.saudacoesWorld.redirect,
-            blank: true,
+            title: 'SaudaçõesWorld',
+            redirect: '/projetos/javascript/saudacoes-world',
           },
         ]}
       />
@@ -82,13 +73,10 @@ export default function Navbar() {
           {
             title: 'JavaScript',
             redirect: '/projetos/javascript/saudacoes-world',
-            blank: true,
           },
           {
             title: 'Linux',
-            redirect: '',
-            blank: true,
-            desenvolved: true,
+            redirect: '/projetos/linux/status-server',
           },
         ]}
       />

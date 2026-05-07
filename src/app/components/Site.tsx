@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useSiteTitle } from '../store/siteModal';
-import { use } from 'react';
 
 export default function Site({
   setModal,

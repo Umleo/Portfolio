@@ -31,19 +31,18 @@ export default function Home() {
                 os meus projetos pessoais e casos de estudo.
                 <br />
                 <br />
-                &emsp;Sou um apaixonado estudante de tecnologia e em busca de me
-                profissionalizar cada vez mais, criei meu portfólio com o
-                objetivo de demonstrar meu conhecimento nas mais variadas
-                tecnologias através de projetos reais. Amo aprender e enfrentar
-                desafios, me considero uma pessoa autodidata e por isso acredito
-                que nasci para a T.I. Para saber mais sobre mim, pode checar meu
-                curriculo abrindo o menu no canto superior direito, lá tem um
-                link para meu currículo completo e também para minhas redes
-                sociais.
+                &emsp;Sou um estudante de tecnologia foco nas áreas de
+                infraestrutura e DevOps, estou em busca de me profissionalizar
+                cada vez mais, e por isso criei este portfólio com o objetivo de
+                demonstrar meu conhecimento nas mais variadas tecnologias
+                através de projetos reais. Com este porfólio, tenho interesse em
+                compartilhar projetos relacionados a sistemas Linux,
+                Cybersecurity, Cloud Computing, containerização, CI/CD e IaC,
+                demonstrando evolução e aprendizado contínuo.
                 <br />
                 <br />
                 &emsp;Recomendo começar dando uma olhada nos projetos em
-                destaque . Cada projeto e caso de estudo está longamente
+                destaque. Cada projeto e caso de estudo está longamente
                 comentado sobre a stack usada, motivo para existir e o que eu
                 mais aprendi durante sua criação, alguns projetos ainda podem
                 estar em desenvolvimento, estes estarão com uma tag sinalizando.
@@ -63,12 +62,6 @@ export default function Home() {
         <hr className="border-neutral-600 border-2 w-3/5 sm:w-2/5 my-8 lg:my-10" />
         {/* projetos em destaque */}
         <section className="flex mb-10 sm:mb-20 flex-col justify-center items-center w-full p-2 gap-6 [&>*:nth-child(n+3)]:hidden sm:p-0 sm:flex-row sm:flex-wrap sm:[&>*:nth-child(n+3)]:block">
-          <Site
-            setModal={setModal}
-            dev={true}
-            title={'Bendita'}
-            image="/projetos/bendita/ProjetoBendita(1).png"
-          />
           <Site
             setModal={setModal}
             dev={false}
