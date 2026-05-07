@@ -31,22 +31,22 @@ export default function Home() {
                 os meus projetos pessoais e casos de estudo.
                 <br />
                 <br />
-                &emsp;Sou um estudante de tecnologia foco nas áreas de
+                &emsp;Sou um estudante de tecnologia com foco nas áreas de
                 infraestrutura e DevOps, estou em busca de me profissionalizar
                 cada vez mais, e por isso criei este portfólio com o objetivo de
-                demonstrar meu conhecimento nas mais variadas tecnologias
-                através de projetos reais. Com este porfólio, tenho interesse em
-                compartilhar projetos relacionados a sistemas Linux,
-                Cybersecurity, Cloud Computing, containerização, CI/CD e IaC,
-                demonstrando evolução e aprendizado contínuo.
+                demonstrar meu conhecimento nas mais variadas técnologias
+                através de projetos reais. Neste porfólio, irei compartilhar
+                projetos relacionados a sistemas Linux, Cybersecurity, Cloud
+                Computing, containerização, CI/CD e IaC, demonstrando evolução e
+                aprendizado contínuo.
                 <br />
                 <br />
                 &emsp;Recomendo começar dando uma olhada nos projetos em
                 destaque. Cada projeto e caso de estudo está longamente
-                comentado sobre a stack usada, motivo para existir e o que eu
-                mais aprendi durante sua criação, alguns projetos ainda podem
-                estar em desenvolvimento, estes estarão com uma tag sinalizando.
-                O código de cada um estará disponivel no Github e o link de seu
+                comentado sobre a stack usada, motivo para existir e o que
+                aprendi durante sua criação, alguns projetos ainda podem estar
+                em desenvolvimento, estes estarão com uma tag sinalizando. O
+                código de cada um estará disponivel no Github e o link de seu
                 repositório estará presente na descrição do projeto.
               </p>
             </div>
