@@ -9,6 +9,7 @@ export default function status_server() {
   const titulo = 'Status Server';
   const link_github =
     'https://github.com/Umleo/mini-projetos/tree/main/estatisticasServidor';
+    const home = "/projetos/linux"
 
   return (
     <>
@@ -88,7 +89,7 @@ export default function status_server() {
           </div>
         </section>
       </div>
-      <BotaoFlutuante />
+      <BotaoFlutuante home={home}/>
     </>
   );
 }

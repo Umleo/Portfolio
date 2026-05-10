@@ -76,7 +76,7 @@ export default function Navbar() {
           },
           {
             title: 'Linux',
-            redirect: '/projetos/linux/status-server',
+            redirect: '/projetos/linux',
           },
         ]}
       />
