@@ -15,9 +15,9 @@ export default function Projetos() {
     },
     {
       name: "Log-Archive",
-      description: "Descrição do Projeto 2",
+      description: "Criação de arquivos compactados tar.gz",
       nivel: "Iniciante",
-      link: "/projetos/linux/projeto2"
+      link: "/projetos/linux/log-archive"
     }
   ];
 
@@ -26,11 +26,11 @@ export default function Projetos() {
       <BotaoHome  />
       {projetos.map((projeto, index) => (
         <Link href={projeto.link} key={index}>
-        <div key={index} className="grid grid-cols-2 md:grid-cols-[25%_60%_15%] mx-2 mb-2 p-2 px-6 border-gray-400 border-2 rounded-2xl ">
-          <div className="flex items-center md:border-r-2 md:border-gray-400 mr-2">
+        <div key={index} className="hover:bg-neutral-900 hover:scale-101 transition-transform duration-200 grid grid-cols-2 md:grid-cols-[25%_60%_15%] mx-2 mb-6 p-2 px-6 border-gray-400 border-2 rounded-2xl">
+          <div className="flex items-center md:border-r-2 mr-2">
               <p className='lg:text-2xl'>{projeto.name}</p>
           </div>
-          <div className="hidden md:flex md:max-w-full items-center md:border-r-2 mr-2 md:border-gray-400">
+          <div className="hidden md:flex md:max-w-full items-center md:border-r-2 mr-2">
             <p className="text-sm lg:text-xl">{projeto.description}</p>
           </div>
           <div className="flex justify-end">

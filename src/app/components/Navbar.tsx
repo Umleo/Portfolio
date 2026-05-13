@@ -50,6 +50,10 @@ export default function Navbar() {
             title: 'Status-Server',
             redirect: '/projetos/linux/status-server',
           },
+          {
+            title: 'Log-Archive',
+            redirect: '/projetos/linux/log-archive',
+          },
         ]}
       />
 

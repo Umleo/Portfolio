@@ -112,7 +112,7 @@ export default function saudacoes_world() {
           </div>
         </section>
       </div>
-      <BotaoFlutuante />
+      <BotaoFlutuante home="/"/>
     </>
   );
 }
