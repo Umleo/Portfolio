@@ -2,14 +2,13 @@ import Titulo from '@/src/app/components/Titulo';
 import BotaoFlutuante from '../../../components/BotaoFlutuante';
 import Image from 'next/image';
 
-const paragrafosClass =
-  'w-full wrap-break-word cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed lg:p-6 lg:text-2xl';
-
-export default function status_server() {
+export default function Status_server() {
+  const paragrafosClass =
+    'w-full wrap-break-word cursor-text rounded-2xl bg-neutral-900 p-4 text-sm leading-relaxed lg:p-6 lg:text-2xl';
   const titulo = 'Status Server';
   const link_github =
     'https://github.com/Umleo/mini-projetos/tree/main/estatisticasServidor';
-    const home = "/projetos/linux"
+  const home = '/projetos/linux';
 
   return (
     <>
@@ -89,7 +88,7 @@ export default function status_server() {
           </div>
         </section>
       </div>
-      <BotaoFlutuante home={home}/>
+      <BotaoFlutuante home={home} />
     </>
   );
 }
