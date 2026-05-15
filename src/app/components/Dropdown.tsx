@@ -47,14 +47,12 @@ export default function Dropdown({
   title,
   content,
   className,
-  menu,
   page,
 }: {
   left?: boolean;
   noArrow?: boolean;
   title: string | React.ReactNode;
   content: contentProps[];
-  menu?: boolean;
   className?: string;
   page?: string;
 }) {
@@ -120,9 +118,8 @@ export default function Dropdown({
               </div>
             ))}
           </div>
-          {menu
-            ? null
-            : content.length > 2 && (
+          {page
+            ? content.length > 2 && (
                 <span className="hidden sm:flex justify-start mt-1 cursor-pointer">
                   <Link
                     href={page || '#'}
@@ -131,7 +128,8 @@ export default function Dropdown({
                     Mais...
                   </Link>
                 </span>
-              )}
+              )
+            : null}
         </div>
       )}
     </div>

@@ -69,6 +69,18 @@ export default function Navbar() {
         ]}
       />
 
+      <Dropdown
+        title="Docker"
+        page="/projetos/docker"
+        className="hidden sm:block sm:order-0"
+        content={[
+          {
+            title: 'Olá Docker',
+            redirect: '/projetos/p-docker/ola-docker',
+          },
+        ]}
+      />
+
       {/* MOBILE */}
       <Dropdown
         className="sm:hidden block sm:order-0"
