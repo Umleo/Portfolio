@@ -94,6 +94,10 @@ export default function Navbar() {
             title: 'Linux',
             redirect: '/projetos/linux',
           },
+          {
+            title: 'Docker',
+            redirect: '/projetos/p-docker/ola-docker',
+          },
         ]}
       />
 
@@ -102,7 +106,6 @@ export default function Navbar() {
         className="order-3 sm:order-0"
         left={left}
         noArrow={noArrow}
-        menu={true}
         title={
           <span
             aria-label="Menu"
